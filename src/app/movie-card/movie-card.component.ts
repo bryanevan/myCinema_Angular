@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class MovieCardComponent {
   movies: any[] = [];
-  favorites: any[] =[];
+  
   constructor(public fetchApiData: FetchApiDataService,
     public snackBar: MatSnackBar,
     public dialog: MatDialog) { }

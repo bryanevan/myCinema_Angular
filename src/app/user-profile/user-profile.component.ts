@@ -4,6 +4,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { FetchApiDataService } from '../fetch-api-app.service';
 import { Router } from '@angular/router';
 import { formatDate } from '@angular/common';
+import * as rxjs from 'rxjs';
+import * as operators from 'rxjs';
 
 
 @Component({
@@ -15,7 +17,7 @@ import { formatDate } from '@angular/common';
 export class UserProfileComponent implements OnInit {
 
   user: any = {};
-  FavoriteMovieList: any[] = [];
+  favorites: any[] = [];
 
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
 
@@ -33,17 +35,29 @@ export class UserProfileComponent implements OnInit {
   /**
    * Gets the user info and favorite movies from the API.
    */
+  // getUser(): void {
+  //   this.user = this.fetchApiData.getOneUser();
+  //   this.userData.Username = this.user.Username;
+  //   this.userData.Email = this.user.Email;
+  //   this.userData.Birthday = formatDate(this.user.Birthday, 'yyyy-MM-dd', 'en-US', 'UTC+0');
+  //   // this.favorites = this.user.favoriteMovieList
+  //   this.fetchApiData.getAllMovies().subscribe((resp: any) => {
+  //     this.FavoriteMovieList = resp.filter((m: { _id: any; }) => this.user.favoriteMovieList.indexOf(m._id) >= 0);
+  //   });
+  // }
   getUser(): void {
-    this.user = this.fetchApiData.getOneUser();
-    this.userData.Username = this.user.Username;
-    this.userData.Email = this.user.Email;
-    this.userData.Birthday = formatDate(this.user.Birthday, 'yyyy-MM-dd', 'en-US', 'UTC+0');
-    // this.favorites = this.user.favoriteMovieList
+    this.fetchApiData.getOneUser().subscribe((user: any) => {
+    this.user = user;
+    this.userData.Username = user.Username;
+    this.userData.Email = user.Email;
+    this.userData.Birthday = formatDate(user.Birthday, 'yyyy-MM-dd', 'en-US', 'UTC+0');
+    
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-      this.FavoriteMovieList = resp.filter((m: { _id: any; }) => this.user.favoriteMovieLists.indexOf(m._id) >= 0);
+      this.favorites = resp.filter((m: { _id: any; }) => 
+      this.user.favoriteMovieList.indexOf(m._id) >= 0);
+    });
     });
   }
-
   /**
    *Calls the API to update the user info.
    */
