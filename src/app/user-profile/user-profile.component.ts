@@ -35,16 +35,6 @@ export class UserProfileComponent implements OnInit {
   /**
    * Gets the user info and favorite movies from the API.
    */
-  // getUser(): void {
-  //   this.user = this.fetchApiData.getOneUser();
-  //   this.userData.Username = this.user.Username;
-  //   this.userData.Email = this.user.Email;
-  //   this.userData.Birthday = formatDate(this.user.Birthday, 'yyyy-MM-dd', 'en-US', 'UTC+0');
-  //   // this.favorites = this.user.favoriteMovieList
-  //   this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-  //     this.FavoriteMovieList = resp.filter((m: { _id: any; }) => this.user.favoriteMovieList.indexOf(m._id) >= 0);
-  //   });
-  // }
   getUser(): void {
     this.fetchApiData.getOneUser().subscribe((user: any) => {
     this.user = user;
@@ -58,6 +48,7 @@ export class UserProfileComponent implements OnInit {
     });
     });
   }
+  
   /**
    *Calls the API to update the user info.
    */
