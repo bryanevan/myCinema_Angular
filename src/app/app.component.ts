@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+/**
+ * Default entry point to the myFlix (Angular) application.
+ */
 export class AppComponent {
   title = 'myFlix-Angular-client';
 }
