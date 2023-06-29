@@ -1,27 +1,50 @@
-# MyFlixAngularClient
+# MyFlix_Angular-Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.8.
+## Table of Contents
 
-## Development server
+- [Overview](#overview)
+- [Live Application](#live-application)
+- [Development Server](#development-server)
+- [Build](#build)
+- [Code Scaffolding](#code-scaffolding)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+
+
+## Overview
+
+Client-side of a single-page, responsive movie catalog application, which includes several views built using Angular and calls data through external REST API endpoints. Server side API code may be found here: [API_code](https://github.com/bryanevan/meet_app)
+
+## Live Application
+Deployed with Github Pages.
+[Live site URL](https://bryanevan.github.io/myFlix_Angular/)
+
+### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
+### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Code Scaffolding
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Running end-to-end tests
+### Technologies Used
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Angular
+- Angular Material
+- Typescript
+- HTML
+- SCSS
 
-## Further help
+  ## Features
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  - User Authentication: The app allows users to create a new account, login, view and update their profile information, logout, and delete their account.
+
+- Movie Database: The app grants access to a comprehensive movie database that contains information on a collection of movies.
+
+- Detailed Movie Information: MyFlix provides a detailed overview of each selected movie, including an image, description, director and genre.
+
+- Personalized Top Movies List: MyFlix provides users with the ability to create a personalized top movies list by adding their favorite movies. Users can easily add or remove movies from their top movies list using various methods, such as a toggle button to like or dislike movies.
